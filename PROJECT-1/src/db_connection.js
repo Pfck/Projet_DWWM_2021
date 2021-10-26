@@ -9,3 +9,5 @@ let config = {
 }
 
 const connection = mysql.createPool(config);
+
+module.exports = connection;
