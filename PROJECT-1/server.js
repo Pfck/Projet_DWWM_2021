@@ -25,6 +25,9 @@ app.use(cors());
 app.use('/', (req, res) =>{
 
   res.render('formulaire');
+
+
+  
 } );
  
 // Handling Errors
