@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
+
     <title>Holis</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
 </head>
 <body>
-    <form action="" method="POST">
+    <form action="/donnees" method="POST">
         <div class="form-group">
             <div class="row">
                 <label class="col-md-3" for="email">Email</label> 
                 <div class="col-md-9">
-                    <input id="email" type="text" class="form-control" name="email" placeholder="Entrer votre email">
+                    <input id="email" required type="email" class="form-control" name="email" placeholder="Entrer votre email">
                 </div>
             </div>
         </div>
@@ -18,7 +19,7 @@
             <div class="form-row">
                 <label class="col-md-3" for="mdp">Mot de passe </label> 
                 <div class="col-md-9">
-                    <input id="mdp" type="text" class="form-control" mdp="" placeholder="Entrer votre mdp">
+                    <input id="mdp" required type="password" class="form-control" name="mdp" placeholder="Entrer votre mdp">
                 </div>
             </div>
         </div>
