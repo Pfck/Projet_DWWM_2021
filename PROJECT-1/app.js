@@ -3,6 +3,8 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const cors = require('cors');
+//const formulaire = require('./views/formulaire');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -21,6 +23,36 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', formulaire);
 app.use('/users', usersRouter);
+
+// vient du document server.js
+app.use(bodyparser.json());
+ 
+app.use(bodyparser.urlencoded({
+    extended: true
+}));
+ 
+app.use(cors());
+
+app.use('/', (req, res) =>{
+
+  res.render('formulaire');
+
+
+  
+} );
+ 
+// Handling Errors
+app.use((err, req, res, next) => {
+    // console.log(err);
+    err.statusCode = err.statusCode || 500;
+    err.message = err.message || "Internal Server Error";
+    res.status(err.statusCode).json({
+      message: err.message,
+    });
+});
+ 
+app.listen(3000,() => console.log('Server is running on port 3000'));
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
