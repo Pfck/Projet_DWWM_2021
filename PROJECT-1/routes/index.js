@@ -8,11 +8,12 @@ router.get('/', (req, res, next) => {
   res.render('index', { title: 'Express' });
 });
 
-
+//Connection with our formulaire
 router.get('/formulaire', (req, res) =>{
   res.render('formulaire');
 });
 
-router.post('/donnees',crtldonnes.data);
+//Connection with our bdd 
+router.post('/donnees', crtldonnes.data);
 
 module.exports = router;
