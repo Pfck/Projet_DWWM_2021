@@ -18,6 +18,12 @@ function guide (req, res, next) {
   }
 };
 
+//Logout-----------------------------------------------------
+router.get('/logout/', function (req, res) {
+  req.session.destroy();
+  res.redirect('formulaire');
+});
+
 
 
 module.exports = router;
