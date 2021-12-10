@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        Galerie Photo
+    </title>
+    <%# Bootstrap %>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="./stylesheets/index_style.css" rel="stylesheet">
+    <link href="./stylesheets/img_grid_style.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+</head>
+
+<body id='body'>
+    <div id="g_container" >
+
+        <%# Affichage des images %>
+        <div class="img_tab_container">
+            <div class="grille">
+                <% if(locals.tb_img) {tb_img.forEach(element => { %>
+                <div class="img_container">
+                    <div class="img_link">
+                        <img class="img-fluid" src="<%= element.img_url %>" alt="<%= element.titre %>">
+                    </div>
+                </div>
+                <% })} %>
+            </div>
+        </div>
+
+        <%# Affichage du menu sur le cote %>
+        <div class="side_menu">
+            <div class="containerTitleSide">
+                <h1 class="titleSide_menu">Philippe Frémont</h1>
+            </div>
+            <div class="containerButton">
+                <button id='buttonOuverture' class='cbx button buttonSignUp'> Connexion</button>
+                <div class='darkTheme'>
+                   <i class="fa fa-sun-o"></i>
+                   <input type="checkbox" id="theme_saver" onclick="theme_save()">
+                   <label for="theme_saver" class="switch"></label>
+                   <i class="fa fa-moon-o"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <%# Formulaire de Connexion %>
+    <div id ="Connexion" class='modal none'>
+        <div class="modal-header">
+            <i class="fa fa-times buttonSignUp"></i>
+            <h2>Connexion</h2>
+        </div>
+        <form id ='formConnexion' class="form" action="/login" method="post">
+            <div class="form-control">
+                <%# Partie formulaire consacre a l'email%>
+                <label for="E-mail">E-mail</label>
+                <input id="mail" type="mail" placeholder="E-mail" name="mail">
+                
+                <%# Liste des icones en cachees %>
+                <i class="fa fa-check-circle" aria-hidden="true"></i>
+                <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+
+                <%# Message d'erreur a afficher si besoin %>
+                <small>E-mail incorrecte</small>
+            </div>
+            <div class="form-control">
+
+                <%# Partie formulaire consacre au mdp%>
+                <label for="Mot de passe">Mot de passe</label>
+                <input id="password" type="password" placeholder="Mot de passe" name ="pswd">
+                
+                <%# Liste des icones en cachees %>
+                <i class="fa fa-eye buttonSignUp"></i>
+                <i class="fa fa-eye-slash buttonSignUp"></i>
+                <i class="fa fa-check-circle"></i>
+                <i class="fa fa-exclamation-circle"></i>
+
+                <%# Message d'erreur a afficher si besoin %>
+                <small>Mot de passe incorrect</small>
+            </div>
+
+            <%# Button de submit du formulaire, il va verifier si checkInputs renvoie vraie pour submit
+            sinon il bloque le submit %>
+            <button class='buttonSignUp buttonConnexion' type="submit" onclick="return checkInputs()">Connexion</button>
+        </form>
+    </div>
+</body>
+    <%# THEME SHIFTER SCRIPT %> 
+    <script src="./scripts/theme.js"></script>
+    <script src="../scripts/modal.js"></script>
+    <script src="../scripts/checkValuesModal.js"></script>
+</html>
