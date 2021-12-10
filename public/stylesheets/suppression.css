@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap');
+
+body {
+    background-color: #1b2845;
+    background-image: linear-gradient(315deg, #1b2845 0%, #274060 74%);
+
+}
+
+.containerBtn {
+    height: 70px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.buttonSup:hover {
+    transform: scale(1.1);
+}
+
+.container {
+    padding: 30px 40px;
+}
+
+.buttonSup {
+    height: 40px;
+    width: 100%;
+    transition: all .3s ease-in-out;
+}
+
+.textQues {
+    font-size: 15px;
+}
+
+a {
+    width: 48%;
+}
+
+a > i {
+    color: #000;
+}
+
+a:hover, a:visited, a:active, a:link {
+    text-decoration: none;
+}
+
+.confirmedBtn {
+   background-color: red;
+   border: 2px solid red;
+   border-radius: 4px;
+   color: #fff;
+   display: inline;
+   font-size: 16px;
+   padding: 10px;
+   margin-top: 20px;
+   cursor: pointer;
+}
+
+.cancelledBtn {
+   background-color: #fff;
+   border: 2px solid black;
+   border-radius: 4px;
+   color: black;
+   display: inline;
+   font-size: 16px;
+   padding: 10px;
+   margin-top: 20px;
+   bottom: 10px;
+   cursor: pointer;
+}

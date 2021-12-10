@@ -1,0 +1,26 @@
+Structure du projet
+
+-controllers <- Ensemble de fonctions utilisées par le serveur | 1) Fonction qui gère une route, 2) Juste des 'modules' |
+-models <- Représentation d'une table de base de données en classe
+-views <- PAGES .EJS
+-routes <- ROUTEURS
+-public <- CSS SCRIPT IMAGES
+
+
+
+Injection SQL:
+
+SELECT * FROM user where name = Corentin; <- Renvoie tout les champs quand le nom est "Corentin"
+SELECT * FROM user where name = Corentin OR NOT Corentin; <- Renvoie tous les champs quand le nom est "Corentin" ou pas "Corentin" = Tout les champs de tout les utilisateurs
+SELECT * FROM user where name = Corentin; DROP DATABASE; <- Supprime la DATABASE
+
+SELECT * FROM user where name = ?;
+Lien vers la prévention contre l'injection SQL en NodeJS
+https://github.com/mysqljs/mysql#escaping-query-values
+
+
+
+Model -> Représentation sous forme de classe d'une table de la base de données
+
+
+Petit exo pour apprendre le display: flex; https://flexboxfroggy.com

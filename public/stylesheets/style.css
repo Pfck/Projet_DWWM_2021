@@ -1,0 +1,26 @@
+body {
+  padding: 50px;
+  /*font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;*/
+}
+
+a {
+  color: #00B7FF;
+}
+
+img {
+  margin: 0;
+  width: 100%;
+}
+
+.main {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.container {
+  display: grid;
+  align-items: start;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-column-gap: 24px;
+  row-gap: 24px;
+}

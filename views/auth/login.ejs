@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header id='header' class="">
+        <button id='buttonOuverture' class='button buttonEnabled buttonSignUp'> Connexion</button>
+        <%#Button de Connexion / button = Style CSS / buttonEnabled = Afficher ou non
+        buttonSignUp = récuperer tous les buttons de cette popup #%>
+    </header>
+    <form class="none" method="post" action="/donnees">
+        <input name="mail"type="text" >
+        <input name="psw"type="text" >
+        <input type="submit" value="ok">
+    </form>
+    <%#---------------------------------Popup Connexion--------------------------------------------------#%>
+    <div id ="Connexion" class='modal none'>
+        <div class="modal-header">
+            <i class="fas fa-times buttonSignUp"></i>
+            <h2>Connexion</h2>
+        </div>
+        <form id ='formConnexion' class="form" action="/donnees" method="post">
+            <div class="form-control">
+                <label for="E-mail">E-mail</label>
+                <input id="mail" type="mail" placeholder="E-mail" name = "mail">
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>E-mail incorrecte</small>
+            </div>
+            <div class="form-control">
+                <label for="Mot de passe">Mot de passe</label>
+                <a role="button" class="buttonMdpOublie">Mot de passe oublié</a>
+                <input id="password" type="password" placeholder="Mot de passe" name ="mdp">
+                <i class="fas fa-eye buttonSignUp"></i>
+                <i class="fas fa-eye-slash buttonSignUp"></i>
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Mot de passe incorrect</small>
+            </div>
+            <button class='buttonSignUp' type="submit">Connexion</button>
+        </form>
+    </div>
+</body>
+</html>
